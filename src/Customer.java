@@ -22,7 +22,7 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration rentals = _rentals.elements();
-        String result = getName() + " 고객님의 대여 기록\\n";
+        String result = getName() + " 고객님의 대여 기록\n";
 
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
@@ -53,15 +53,15 @@ public class Customer {
                     each.getDaysRented() > 1) frequentRenterPoints++;
 
             // 이번에 대여하는 비디오 정보와 대여료를 출력
-            result += "\\t" + each.getMovie().getTitle() + "\\t" +
-                    String.valueOf(thisAmount) + "\\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" +
+                    String.valueOf(thisAmount) + "\n";
 
             // 현재까지 누적된 총 대여료
             totalAmount += thisAmount;
         }
 
         // 푸터 행 추가
-        result += "누적 대여료 : " + String.valueOf(totalAmount) + "\\n";
+        result += "누적 대여료 : " + String.valueOf(totalAmount) + "\n";
         result += "적립 포인트 : " + String.valueOf(frequentRenterPoints);
         return result;
     }

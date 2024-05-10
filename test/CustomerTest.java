@@ -1,8 +1,9 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 class CustomerTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void statement() {
 
         Movie movie = new Movie("first Movie", Movie.NEW_RELEASE);
@@ -12,8 +13,8 @@ class CustomerTest {
         customer.addRental(rental);
         String result = customer.statement();
 
-        System.out.println(result);
+//        System.out.println(result);
 
-
+        Assertions.assertEquals(customer.statement(), result);
     }
 }
